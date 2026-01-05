@@ -6,15 +6,15 @@ const Portfolio = () => {
   const [activeImage, setActiveImage] = useState<string | null>(null);
 
   return (
-    <section className="py-20 lg:py-28 bg-neutral-900">
+    <section className="py-20 lg:py-28 ">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-white">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             Featured Work
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            A curated selection of our professional photography projects
+          <p className="text-lg md:text-xl text-gray-900">
+            Professional real estate consulting, marketing, and sales services
           </p>
         </div>
 
