@@ -190,6 +190,10 @@ const BookForm = () => {
             <label className="block text-sm mb-2">Notes: (Optional)</label>
             <textarea
               rows={4}
+              name="notes"
+              id="notes"
+              onChange={formik.handleChange}
+              value={formik.values.notes}
               placeholder="Any additional details you would like to share..."
               className="w-full rounded-lg bg-neutral-900 border border-neutral-700 px-4 py-3 text-sm focus:outline-none focus:border-amber-500 resize-none"
             />
