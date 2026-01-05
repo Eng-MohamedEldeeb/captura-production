@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Home, Layout } from "./project/Pages";
+import { BookNow, Home, Layout } from "./project/Pages";
 
 const AppRouters = () => {
   return createBrowserRouter([
@@ -10,6 +10,10 @@ const AppRouters = () => {
         {
           path: "/",
           element: <Home />,
+        },
+        {
+          path: "/book-now",
+          element: <BookNow />,
         },
       ],
     },

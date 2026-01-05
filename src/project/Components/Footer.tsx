@@ -9,10 +9,10 @@ const Footer = () => {
             <div className="flex items-center justify-center md:justify-start gap-3">
               <i className="fa-solid fa-envelope"></i>
               <a
-                href="mailto:info@focussspot.com"
+                href="mailto:info@capturaproduction.com"
                 className="hover:text-gray-300 transition"
               >
-                info@focussspot.com
+                info@capturaproduction.com
               </a>
             </div>
 
@@ -51,17 +51,11 @@ const Footer = () => {
         </div>
 
         <div className="mt-8 pt-6 border-t border-gray-100 text-center text-sm">
-          <a
-            href="/privacy"
-            className="text-amber-600 hover:text-amber-400 mx-4 transition"
-          >
+          <a href="/privacy" className="text-white mx-4 transition">
             Privacy
           </a>
           -
-          <a
-            href="/terms"
-            className="text-amber-600 hover:text-amber-400 mx-4 transition"
-          >
+          <a href="/terms" className="text-white mx-4 transition">
             Terms
           </a>
         </div>
