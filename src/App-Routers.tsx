@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { BookNow, Home, Layout } from "./project/Pages";
+import { BookNow, Home, Layout } from "./project/pages";
 
 const AppRouters = () => {
   return createBrowserRouter([

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./style.css";
 
 const SuccessModal = ({
@@ -7,18 +8,32 @@ const SuccessModal = ({
   isOpen: boolean;
   onClose: () => void;
 }) => {
+  const [isClosing, setIsClosing] = useState(false);
+
   if (!isOpen) return null;
+
+  const handleClose = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      onClose();
+    }, 300);
+  };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
-      {/* Dark Overlay */}
+      {/* Overlay */}
       <div
-        className="absolute inset-0 bg-black/70 backdrop-blur-sm animate-fade-in"
-        onClick={onClose}
+        onClick={handleClose}
+        className={`absolute inset-0 bg-black/70 backdrop-blur-sm
+          ${isClosing ? "animate-fade-out" : "animate-fade-in"}`}
       />
 
       {/* Modal */}
-      <div className="relative bg-neutral-900 border border-neutral-700 rounded-2xl shadow-2xl p-6 md:p-8 max-w-md w-[90%] animate-scale-fade">
+      <div
+        className={`relative bg-neutral-900 border border-neutral-700 
+        rounded-2xl shadow-2xl p-6 md:p-8 max-w-md w-[90%]
+        ${isClosing ? "animate-scale-fade-out" : "animate-scale-fade"}`}
+      >
         <div className="text-center">
           <div className="mb-4 text-amber-500 text-4xl">✓</div>
 
@@ -30,8 +45,9 @@ const SuccessModal = ({
           </p>
 
           <button
-            onClick={onClose}
-            className="bg-amber-600 hover:bg-amber-700 transition px-8 py-3 rounded-lg text-sm font-semibold"
+            onClick={handleClose}
+            className="bg-amber-600 hover:bg-amber-700 transition 
+            px-8 py-3 rounded-lg text-sm font-semibold"
           >
             Close
           </button>
@@ -40,4 +56,5 @@ const SuccessModal = ({
     </div>
   );
 };
+
 export default SuccessModal;

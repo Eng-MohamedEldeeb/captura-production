@@ -1,15 +1,15 @@
+import { useState } from "react";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import axios, { AxiosError } from "axios";
-import { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 import type {
   IBookNow,
-  TSessionServices,
   TClientType,
+  TSessionServices,
 } from "../interface/IBookNow.interface";
 import SuccessModal from "./SuccessModal/SuccessModal";
-import { useNavigate } from "react-router-dom";
+
 const BookForm = () => {
   const [showSuccess, setShowSuccess] = useState(false);
   const navigateTo = useNavigate();
