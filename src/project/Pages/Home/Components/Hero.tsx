@@ -1,4 +1,4 @@
-import { photoStudio } from "../../../../assets";
+import { photoStudio } from "../../../../assets/home";
 
 const Hero = () => {
   return (

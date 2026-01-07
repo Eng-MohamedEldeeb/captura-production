@@ -79,7 +79,7 @@ const Navbar = () => {
             onClick={() => setIsOpen(true)}
             className="md:hidden text-white text-2xl"
           >
-            ☰
+            <i className="fa-solid fa-bars"></i>
           </button>
         </div>
       </nav>
@@ -112,7 +112,7 @@ const Navbar = () => {
               onClick={() => setIsOpen(false)}
               className="text-xl hover:text-amber-400 transition"
             >
-              ✕
+              <i className="fa-solid fa-x"></i>
             </button>
           </div>
 

@@ -1,20 +1,28 @@
 import { useState } from "react";
 import ImageModal from "./Components/ImageModal";
-import { pic1, pic2, pic3, pic4 } from "../../../assets";
-
-const images = [
-  { id: 1, src: pic1 },
-  { id: 2, src: pic2 },
-  { id: 3, src: pic3 },
-  { id: 4, src: pic4 },
-  { id: 2, src: pic2 },
-  { id: 1, src: pic1 },
-  { id: 3, src: pic3 },
-  { id: 4, src: pic4 },
-];
+import * as galleryImgs from "./../../../assets/gallery/index";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  const imgs = [
+    { id: 1, src: galleryImgs.img1 },
+    { id: 2, src: galleryImgs.img2 },
+    { id: 3, src: galleryImgs.img3 },
+    { id: 4, src: galleryImgs.img4 },
+    { id: 5, src: galleryImgs.img5 },
+    { id: 6, src: galleryImgs.img6 },
+    { id: 7, src: galleryImgs.img7 },
+    { id: 8, src: galleryImgs.img8 },
+    { id: 9, src: galleryImgs.img9 },
+    { id: 10, src: galleryImgs.img10 },
+    { id: 11, src: galleryImgs.img11 },
+    { id: 12, src: galleryImgs.img12 },
+    { id: 13, src: galleryImgs.img13 },
+    { id: 14, src: galleryImgs.img14 },
+  ];
+
+  console.log(imgs);
 
   return (
     <section className="py-24 bg-neutral-900">
@@ -39,7 +47,7 @@ const Gallery = () => {
           xl:grid-cols-4
         "
         >
-          {images.map((img) => (
+          {imgs.map((img) => (
             <div
               key={img.id}
               onClick={() => setSelectedImage(img.src)}
@@ -51,7 +59,7 @@ const Gallery = () => {
             >
               <img
                 src={img.src}
-                alt=""
+                alt={img.src}
                 className="
                   w-full h-full object-cover
                   transition-transform duration-500

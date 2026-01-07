@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { pic1, pic2, pic3 } from "../../../../../assets";
+import * as portfolioImgs from "../../../../../assets/portfolio";
 import ImageModal from "./ImageModal";
 
 const Portfolio = () => {
   const [activeImage, setActiveImage] = useState<string | null>(null);
 
-  const imgs: string[] = [pic1, pic2, pic3];
+  const imgs: string[] = Object.values(portfolioImgs);
 
   return (
     <section className="py-20 lg:py-28 ">
@@ -26,21 +26,34 @@ const Portfolio = () => {
             <div
               key={i}
               onClick={() => setActiveImage(img)}
-              className="group cursor-pointer relative"
+              className="
+                group relative cursor-pointer
+                overflow-hidden 
+                bg-neutral-900
+              "
             >
-              {/* Frame */}
-              <div className="absolute inset-0 translate-x-1 translate-y-1" />
+              <img
+                src={img}
+                alt={img}
+                className="
+                  w-full h-full object-cover
+                  transition-transform duration-500
+                  group-hover:scale-110
+                "
+              />
 
-              {/* Image */}
-              <div className="relative overflow-hidden shadow-2xl h-65 md:h-80">
-                <img
-                  src={img}
-                  alt=""
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition" />
+              {/* Overlay */}
+              <div
+                className="
+                absolute inset-0
+                bg-black/50
+                opacity-0
+                group-hover:opacity-100
+                transition-opacity duration-300
+                flex items-center justify-center
+              "
+              >
+                <i className="fa-solid fa-expand text-white text-xl"></i>
               </div>
             </div>
           ))}

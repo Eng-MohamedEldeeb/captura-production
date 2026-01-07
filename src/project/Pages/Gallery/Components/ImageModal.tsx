@@ -37,7 +37,7 @@ const ImageModal = ({
           onClick={onClose}
           className="absolute -top-4 -right-4 bg-neutral-900 border border-neutral-700 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-neutral-800 transition"
         >
-          ✕
+          <i className="fa-solid fa-x"></i>
         </button>
       </div>
     </div>
