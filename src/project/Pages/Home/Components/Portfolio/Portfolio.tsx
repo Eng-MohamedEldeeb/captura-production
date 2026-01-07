@@ -5,32 +5,34 @@ import ImageModal from "./ImageModal";
 const Portfolio = () => {
   const [activeImage, setActiveImage] = useState<string | null>(null);
 
+  const imgs: string[] = [pic1, pic2, pic3];
+
   return (
     <section className="py-20 lg:py-28 ">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+          <h2 className="text-white text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             Featured Work
           </h2>
-          <p className="text-lg md:text-xl text-gray-900">
+          {/* <p className="text-lg md:text-xl text-gray-900">
             Professional real estate consulting, marketing, and sales services
-          </p>
+          </p> */}
         </div>
 
         {/* Images Row */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {[pic1, pic2, pic3].map((img, i) => (
+          {imgs.map((img, i) => (
             <div
               key={i}
               onClick={() => setActiveImage(img)}
               className="group cursor-pointer relative"
             >
               {/* Frame */}
-              <div className="absolute inset-0 border border-neutral-700/60 rounded-2xl translate-x-2 translate-y-2" />
+              <div className="absolute inset-0 translate-x-1 translate-y-1" />
 
               {/* Image */}
-              <div className="relative overflow-hidden rounded-2xl shadow-2xl h-65 md:h-80">
+              <div className="relative overflow-hidden shadow-2xl h-65 md:h-80">
                 <img
                   src={img}
                   alt=""

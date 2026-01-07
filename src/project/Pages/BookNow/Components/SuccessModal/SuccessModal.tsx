@@ -12,18 +12,11 @@ const SuccessModal = ({
 
   if (!isOpen) return null;
 
-  const handleClose = () => {
-    setIsClosing(true);
-    setTimeout(() => {
-      onClose();
-    }, 300);
-  };
-
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       {/* Overlay */}
       <div
-        onClick={handleClose}
+        onClick={() => setIsClosing((prev) => !prev)}
         className={`absolute inset-0 bg-black/70 backdrop-blur-sm
           ${isClosing ? "animate-fade-out" : "animate-fade-in"}`}
       />
@@ -45,7 +38,7 @@ const SuccessModal = ({
           </p>
 
           <button
-            onClick={handleClose}
+            onClick={onClose}
             className="bg-amber-600 hover:bg-amber-700 transition 
             px-8 py-3 rounded-lg text-sm font-semibold"
           >
